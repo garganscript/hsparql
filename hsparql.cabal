@@ -1,3 +1,4 @@
+Cabal-Version: 3.4
 Name:          hsparql
 Version:       0.3.8
 Synopsis:      A SPARQL query generator and DSL, and a client to query a SPARQL server.
@@ -9,7 +10,7 @@ Description:
 
     Example queries are included in the tests:
       <https://github.com/robstewart57/hsparql/blob/master/tests/DBPedia.hs>.
-License:       BSD3
+License:       BSD-3-Clause
 License-file:  LICENSE
 Author:        Jeff Wheeler, Rob Stewart
 Maintainer:    Rob Stewart <robstewart57@gmail.com>
@@ -17,7 +18,6 @@ homepage:      https://github.com/robstewart57/hsparql
 bug-reports:   https://github.com/robstewart57/hsparql/issues
 Stability:     Experimental
 Build-type:    Simple
-Cabal-Version: >= 1.10
 
 library
   Exposed-modules: Database.HSparql.Connection
@@ -26,7 +26,7 @@ library
                , HTTP >= 4
                , mtl
                , xml
-               , rdf4h >= 4.0.2
+               , rdf4h ^>= 4.0.2
                , bytestring
                , MissingH
                , network
@@ -35,7 +35,7 @@ library
                , http-client
                , http-types
                , http-conduit
-               , connection
+               , crypton-connection
                , bytestring
   ghc-options: -Wall -Wcompat
   default-language: Haskell2010
@@ -44,7 +44,7 @@ test-suite test-hsparql
   type:          exitcode-stdio-1.0
   main-is:       AllTests.hs
   build-depends: hsparql
-                 , rdf4h >= 4.0.2
+                 , rdf4h ^>= 4.0.2
                  , base
                  , text
                  , containers
